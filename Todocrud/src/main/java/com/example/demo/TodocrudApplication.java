@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.demo.entity.HelloEntity;
+import com.example.demo.entity.Todo;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -21,10 +21,10 @@ public class TodocrudApplication {
 			EntityTransaction tx = em.getTransaction();
 			tx.begin();
 			
-			HelloEntity hello = new HelloEntity();
-			hello.setName("hong");
-			hello.setGreeting("Hello world");
-			em.persist(hello);
+			Todo todo = new Todo();
+			todo.setTitle("work");
+			todo.setDone(true);
+			em.persist(todo);
 			
 			tx.commit();			
 		} catch (Exception e) {
